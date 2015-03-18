@@ -2,7 +2,7 @@
 addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.7.4")
 
 // https://github.com/xerial/sbt-pack
-addSbtPlugin("org.xerial.sbt" % "sbt-pack" % "0.6.2")
+addSbtPlugin("org.xerial.sbt" % "sbt-pack" % "0.6.7")
 
 // https://github.com/sbt/sbt-man (allows man commands in sbt console)
 addSbtPlugin("com.eed3si9n" % "sbt-man" % "0.1.1")
