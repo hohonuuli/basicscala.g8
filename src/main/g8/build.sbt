@@ -168,7 +168,7 @@ def removeWartRemoverFromCompileTarget = {
   // The bit below removes all switches that could be passed to scalac about WartRemover during a non-lint compile.
   scalacOptions in Compile := (scalacOptions in Compile).value filterNot { switch =>
     switch.startsWith("-P:wartremover:") ||
-    "^-Xplugin:.*/org[.]brianmckenna/.*wartremover.*[.]jar$".r.pattern.matcher(switch).find
+    "^-Xplugin:.*/org[.]brianmckenna/.*wartremover.*[.]jar\$".r.pattern.matcher(switch).find
   }
 }
 
@@ -191,7 +191,7 @@ def removeFoursquareLinterFromCompileTarget = {
   // The bit below removes all switches that could be passed to scalac about WartRemover during a non-lint compile.
   scalacOptions in Compile := (scalacOptions in Compile).value filterNot { switch =>
     switch.startsWith("-P:linter:") ||
-      "^-Xplugin:.*/com[.]foursquare[.]lint/.*linter.*[.]jar$".r.pattern.matcher(switch).find
+      "^-Xplugin:.*/com[.]foursquare[.]lint/.*linter.*[.]jar\$".r.pattern.matcher(switch).find
   }
 }
   
