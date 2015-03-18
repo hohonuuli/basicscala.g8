@@ -81,7 +81,7 @@ versionReport <<= (externalDependencyClasspath in Compile, streams) map {
             // unmanaged JAR, just
             attributed.data.getAbsolutePath
         }
-    }.sortBy(a => a.trim.split("\\s+").map(_.toUpperCase).take(2).last).mkString("\n")
+    }.sortBy(a => a.trim.split("\\\\s+").map(_.toUpperCase).take(2).last).mkString("\n")
     streams.log.info(report)
     report
 }
