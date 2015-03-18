@@ -42,7 +42,7 @@ libraryDependencies ++= {
     "ch.qos.logback" % "logback-classic" % logbackVersion,
     "ch.qos.logback" % "logback-core" % logbackVersion,
     "junit" % "junit" % "4.12" % "test",
-    "org.scalatest" %% "scalatest" % "$scalatest_version$" % "test",
+    "org.scalatest" %% "scalatest" % "2.2.4" % "test",
     "org.slf4j" % "log4j-over-slf4j" % slf4jVersion,
     "org.slf4j" % "slf4j-api" % slf4jVersion)
 }
