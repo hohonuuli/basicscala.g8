@@ -8,7 +8,7 @@ name := "$name$"
 
 version in ThisBuild := "$version$"
 
-scalaVersion in ThisBuild := "2.11.6"
+scalaVersion in ThisBuild := "$scala_version$"
 
 // https://tpolecat.github.io/2014/04/11/scalac-flags.html
 scalacOptions in ThisBuild ++= Seq(
@@ -36,12 +36,12 @@ updateOptions := updateOptions.value.withCachedResolution(true)
 
 // Add SLF4J, Logback and testing libs
 libraryDependencies ++= {
-  val slf4jVersion = "$slf4j_version$"
-  val logbackVersion = "$logback_version$"
+  val slf4jVersion = "1.7.10"
+  val logbackVersion = "1.1.2"
   Seq(
     "ch.qos.logback" % "logback-classic" % logbackVersion,
     "ch.qos.logback" % "logback-core" % logbackVersion,
-    "junit" % "junit" % "$junit_version$" % "test",
+    "junit" % "junit" % "4.12" % "test",
     "org.scalatest" %% "scalatest" % "$scalatest_version$" % "test",
     "org.slf4j" % "log4j-over-slf4j" % slf4jVersion,
     "org.slf4j" % "slf4j-api" % slf4jVersion)
@@ -50,9 +50,9 @@ libraryDependencies ++= {
 resolvers in ThisBuild ++= Seq(Resolver.mavenLocal,
     "mbari-maven-repository" at "https://mbari-maven-repository.googlecode.com/svn/repository")
 
-publishMavenStyle := true
+//publishMavenStyle := true
 
-publishTo := Some(Resolver.file("file",  new File(Path.userHome.absolutePath+"/.m2/repository")))
+//publishTo := Some(Resolver.file("file",  new File(Path.userHome.absolutePath+"/.m2/repository")))
 
 // OTHER SETTINGS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Adds commands for dependency reporting

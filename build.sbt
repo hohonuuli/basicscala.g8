@@ -1,6 +1,4 @@
-//giter8Settings
-
-seq(giter8Settings :_*)
+giter8Settings
 
 resolvers += Resolver.url("typesafe", url("http://repo.typesafe.com/typesafe/ivy-releases/"))(Resolver.ivyStylePatterns)
 
