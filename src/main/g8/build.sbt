@@ -22,11 +22,9 @@ scalacOptions in ThisBuild ++= Seq(
   "-Xfatal-warnings",       
   "-Xlint",
   "-Yno-adapted-args",       
-  "-Ywarn-dead-code",        // N.B. doesn't work well with the ??? hole
   "-Ywarn-numeric-widen",   
   "-Ywarn-value-discard",
   "-Xfuture")
-  //"-Ywarn-unused-import")     // 2.11 only. Really SLOW!!
 
 javacOptions in ThisBuild ++= Seq("-target", "1.8", "-source","1.8")
 

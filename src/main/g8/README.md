@@ -41,6 +41,6 @@ _ `scalastyleGenerateConfig`: Generates a scalastyle config file. Run before usi
 `sbt 'test-only org.mbari.foo.ExampleSpec'`
 
 ## References
-[Best Practices](https://github.com/alexandru/scala-best-practices/)
+[Best Practices](https://github.com/alexandru/scala-best-practices/)  
 [SBT Pack](https://github.com/xerial/sbt-pack) - Files added in `src/pack` are included in product
 
