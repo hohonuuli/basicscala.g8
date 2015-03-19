@@ -11,7 +11,7 @@ This project is built using [SBT](http://www.scala-sbt.org/)
 - `cleanall`: Does `clean` and `clean-files`
 - `compile` or `~compile` (continuous)
 - `console`: Opens a scala console that includes the projects dependencies and code on the classpath
-- `dependency-graph`: Shows an ASCII dependency graph
+- `dependency-tree`: Shows an ASCII dependency graph
 - `dependencyUpdates`: Show dependency updates
 - `doc`: Generate Scaladoc into target/api
 - `export fullClasspath`: Generate the classpath needed to run the project
@@ -20,11 +20,12 @@ This project is built using [SBT](http://www.scala-sbt.org/)
 - `lint:compile`: Run static checkers as part of compilion. (Static checking is slow)
 - `offline`: Use SBT offline
 - `pack`: Builds a standalone distribution of this project under `target/pack`
+- `pack-archive`: Takes the product from `pack` and generates a _tar.gz_ archive
 - `package`: Creates the main artifact (e.g. a jar) under `target`
 - `publish-local` or `~publish-local` (continous): Publish to the local ivy repo
 - `publishM2`: Publish to the local maven repo
 - `reload`: Reloads the build. Useful if you edit build.sbt.
-_ `scalastyleGenerateConfig: Generates a scalastyle config file. Run before using `scalastyle`
+_ `scalastyleGenerateConfig`: Generates a scalastyle config file. Run before using `scalastyle`
 - `scalastyle`: Checks code style. Results go into target/scalastyle-result.xml. Also `test:scalastyle`
 - `show ivy-report`: Show the location of the dependency report
 - `show update`: Show dependencies and indicate which were evicted
@@ -41,4 +42,5 @@ _ `scalastyleGenerateConfig: Generates a scalastyle config file. Run before usin
 
 ## References
 [Best Practices](https://github.com/alexandru/scala-best-practices/)
+[SBT Pack](https://github.com/xerial/sbt-pack) - Files added in `src/pack` are included in product
 
