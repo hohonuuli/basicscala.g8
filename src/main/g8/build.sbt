@@ -10,7 +10,7 @@ version in ThisBuild := "$version$"
 
 scalaVersion in ThisBuild := "$scala_version$"
 
-//crossScalaVersions := Seq("$scala_version", "2.10.5", "2.11.6")
+//crossScalaVersions := Seq("$scala_version$", "2.10.5", "2.11.6")
 
 // https://tpolecat.github.io/2014/04/11/scalac-flags.html
 scalacOptions in ThisBuild ++= Seq(
