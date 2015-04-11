@@ -91,7 +91,7 @@ gitHeadCommitSha := Process("git rev-parse HEAD").lines.head
 
 makeVersionProperties := {
   val propFile = new File((resourceManaged in Compile).value, "version.properties")
-  val content = "version=%s" format (gitHeadCommitSha.value)
+  val content = "version=\%s" format (gitHeadCommitSha.value)
   IO.write(propFile, content)
   Seq(propFile)
 }
