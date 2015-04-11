@@ -87,7 +87,7 @@ versionReport <<= (externalDependencyClasspath in Compile, streams) map {
 }
 
 // Code for adding a version.propertes file
-gitHeadCommitSha := Process("git rev-parse HEAD").lines.head
+gitHeadCommitSha := scala.util.Try(Process("git rev-parse HEAD").lines.head).getOrElse("")
 
 makeVersionProperties := {
   val propFile = (resourceManaged in Compile).value / "version.properties"
