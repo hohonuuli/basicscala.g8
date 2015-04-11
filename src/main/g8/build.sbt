@@ -90,13 +90,13 @@ versionReport <<= (externalDependencyClasspath in Compile, streams) map {
 gitHeadCommitSha := Process("git rev-parse HEAD").lines.head
 
 makeVersionProperties := {
-  val propFile = new File((resourceManaged in Compile).value, "version.properties")
-  val content = "version=\%s" format (gitHeadCommitSha.value)
+  val propFile = (resourceManaged in Compile).value / "version.properties"
+  val content = "version=%s" format (gitHeadCommitSha.value)
   IO.write(propFile, content)
   Seq(propFile)
 }
 
-resourceGenerators in Compile += makeVersionProperties
+resourceGenerators in Compile <+= makeVersionProperties
 
 // For sbt-pack
 packAutoSettings
