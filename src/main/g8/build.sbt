@@ -109,6 +109,7 @@ scalariformSettings
 ScalariformKeys.preferences := ScalariformKeys.preferences.value
   .setPreference(IndentSpaces, 2)
   .setPreference(PlaceScaladocAsterisksBeneathSecondAsterisk, false)
+  .setPreference(DoubleIndentClassDeclaration, true)
   
 // Fail if style is bad
 scalastyleFailOnError := true
