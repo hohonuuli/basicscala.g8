@@ -8,7 +8,7 @@ addSbtPlugin("org.xerial.sbt" % "sbt-pack" % "0.6.8")
 addSbtPlugin("com.sksamuel.sbt-versions" % "sbt-versions" % "0.2.0")
 
 // https://github.com/rtimush/sbt-updates
-addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.1.6")
+addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.1.8")
 
 // https://github.com/sbt/sbt-scalariform
 addSbtPlugin("com.typesafe.sbt" % "sbt-scalariform" % "1.3.0")

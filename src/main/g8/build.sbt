@@ -30,6 +30,8 @@ scalacOptions in ThisBuild ++= Seq(
 
 javacOptions in ThisBuild ++= Seq("-target", "1.8", "-source","1.8")
 
+incOptions := incOptions.value.withNameHashing(true)
+
 // DEPENDENCIES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 updateOptions := updateOptions.value.withCachedResolution(true) 
