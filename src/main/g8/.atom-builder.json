@@ -1,0 +1,10 @@
+{
+  "cmd": "sbt",
+  "args": [ "compile"],
+  "sh": true,
+  "cwd": "{PROJECT_PATH}",
+  "env": {
+    "SBT_OPTS": "-Duser.timezone=UTC -Xmx2048m -noverify"
+  },
+  "errorMatch": "\\[error\\] (?<file>[^:]+):(?<line>\\d+)"
+}
