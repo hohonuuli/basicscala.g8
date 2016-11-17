@@ -1,8 +1,4 @@
-# $name$
-
-$description$
-
-This project is built using [SBT](http://www.scala-sbt.org/)
+# SBT Help
 
 ## Useful [SBT commands](http://www.scala-sbt.org/release/docs/Command-Line-Reference.html) for this project
 
