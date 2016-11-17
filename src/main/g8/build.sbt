@@ -86,7 +86,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "$name$",
     version := "$version$",
-    todosTags := Set("TODO", "FIXME", "WTF\?"),
+    todosTags := Set("TODO", "FIXME", "WTF"),
     fork := true,
     libraryDependencies ++= {
       Seq(
