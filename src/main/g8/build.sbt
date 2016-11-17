@@ -78,11 +78,11 @@ lazy val optionSettings = Seq(
 addCommandAlias("cleanall", ";clean;clean-files")
 
 // --- Modules
-lazy val varsSettings = buildSettings ++ consoleSettings ++ dependencySettings ++
+lazy val appSettings = buildSettings ++ consoleSettings ++ dependencySettings ++
     optionSettings ++ reformatOnCompileSettings
 
 lazy val root = (project in file("."))
-  .settings(varsSettings)
+  .settings(appSettings)
   .settings(
     name := "$name$",
     version := "$version$",
@@ -96,10 +96,11 @@ lazy val root = (project in file("."))
   )
 
 // -- SBT-PACK
-// For sbt-pack
 packAutoSettings
 
-// For sbt-pack
+// pack can autogenerate scripts for all code with main methods. However, I often need
+// to customize the scripts. Manually edit apps to include the name of the scripts that
+// pack generates so that they are each customized. 
 val apps = Seq("main")
 
 packAutoSettings ++ Seq(packExtraClasspath := apps.map(_ -> Seq("\${PROG_HOME}/conf")).toMap,
