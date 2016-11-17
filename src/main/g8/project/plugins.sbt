@@ -13,4 +13,7 @@ addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.2.0")
 // https://github.com/fedragon/sbt-todolist
 addSbtPlugin("com.github.fedragon" % "sbt-todolist" % "0.6")
 
+// https://olafurpg.github.io/scalafmt
+addSbtPlugin("com.geirsson" % "sbt-scalafmt" % "0.4.8")
+
 resolvers += Resolver.sonatypeRepo("releases")

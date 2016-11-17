@@ -86,7 +86,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "$name$",
     version := "$version$",
-    todosTags := Set("TODO", "FIXME", "WTF?"),
+    todosTags := Set("TODO", "FIXME", "WTF\?"),
     fork := true,
     libraryDependencies ++= {
       Seq(
@@ -94,3 +94,15 @@ lazy val root = (project in file("."))
       )
     }
   )
+
+// -- SBT-PACK
+// For sbt-pack
+packAutoSettings
+
+// For sbt-pack
+val apps = Seq("main")
+
+packAutoSettings ++ Seq(packExtraClasspath := apps.map(_ -> Seq("\${PROG_HOME}/conf")).toMap,
+  packJvmOpts := apps.map(_ -> Seq("-Duser.timezone=UTC", "-Xmx4g")).toMap,
+  packDuplicateJarStrategy := "latest",
+  packJarNameConvention := "original")
