@@ -1,0 +1,7 @@
+style = default
+align.openParenCallSite = false
+assumeStandardLibraryStripMargin = true
+docstrings = JavaDoc
+maxColumn = 100
+newlines.sometimesBeforeColonInMethodReturnType = false
+rewrite.rules = [PreferCurlyFors, RedundantBraces, SortImports]
