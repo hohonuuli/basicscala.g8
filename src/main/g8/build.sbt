@@ -85,7 +85,7 @@ lazy val `$name$` = (project in file("."))
   )
   .settings( // config sbt-pack
       packAutoSettings ++ Seq(
-        packExtraClasspath := apps.map(_ -> Seq("${PROG_HOME}/conf")).toMap,
+        packExtraClasspath := apps.map(_ -> Seq("//${PROG_HOME}/conf")).toMap,
         packJvmOpts := apps.map(_ -> Seq("-Duser.timezone=UTC", "-Xmx4g")).toMap,
         packDuplicateJarStrategy := "latest",
         packJarNameConvention := "original"
