@@ -66,7 +66,7 @@ addCommandAlias("cleanall", ";clean;clean-files")
 
 // --- Modules
 lazy val appSettings = buildSettings ++ consoleSettings ++ dependencySettings ++
-    optionSettings ++ reformatOnCompileSettings
+    optionSettings
 
 lazy val apps = Seq("main")  // for sbt-pack
 
