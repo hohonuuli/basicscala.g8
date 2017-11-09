@@ -1,6 +1,6 @@
 excludeFiles = ",*.class"
 excludeDirectories = "**/{target,build}"
-includeFilesInBrowser = ".gitignore"
+includeFilesInBrowser = "{.gitignore,.scalafmt.conf,.scalafmt}"
 
 showInvisibles = true
 spellChecking  = false

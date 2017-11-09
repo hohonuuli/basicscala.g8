@@ -57,7 +57,6 @@ lazy val optionSettings = Seq(
     "-Ywarn-value-discard",
     "-Xfuture"),
   javacOptions ++= Seq("-target", "1.8", "-source", "1.8"),
-  incOptions := incOptions.value.withNameHashing(true),
   updateOptions := updateOptions.value.withCachedResolution(true)
 )
 
@@ -67,6 +66,8 @@ addCommandAlias("cleanall", ";clean;clean-files")
 // --- Modules
 lazy val appSettings = buildSettings ++ consoleSettings ++ dependencySettings ++
     optionSettings
+    
+enablePlugins(PackPlugin)
 
 lazy val apps = Seq("main")  // for sbt-pack
 
@@ -84,10 +85,12 @@ lazy val `$name$` = (project in file("."))
     }
   )
   .settings( // config sbt-pack
-      packAutoSettings ++ Seq(
-        packExtraClasspath := apps.map(_ -> Seq("\${PROG_HOME}/conf")).toMap,
-        packJvmOpts := apps.map(_ -> Seq("-Duser.timezone=UTC", "-Xmx4g")).toMap,
-        packDuplicateJarStrategy := "latest",
-        packJarNameConvention := "original"
-      )
-    )
+    packMain := Map("main" -> "Main"),
+    packExtraClasspath := Map("main" -> Seq("${PROG_HOME}/conf")),
+    packJvmOpts := Map("main" -> Seq("-Duser.timezone=UTC", "-Xmx4g")),
+    packDuplicateJarStrategy := "latest",
+    packJarNameConvention := "original"
+  )
+  .settings( // config scalafmt
+    scalafmtOnCompile := true
+  )
